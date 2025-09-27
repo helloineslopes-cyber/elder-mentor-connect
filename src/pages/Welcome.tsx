@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { IconContainer } from "@/components/ui/icon";
 import { useNavigate } from "react-router-dom";
-import { Heart, Users, Lightbulb } from "lucide-react";
+import { Check } from "lucide-react";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -11,65 +11,73 @@ const Welcome = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background px-4 py-8 flex flex-col justify-center mobile-safe-area">
-      <div className="max-w-md mx-auto w-full space-y-8 no-select">
+    <div className="min-h-screen bg-background px-6 py-12 flex flex-col justify-center mobile-safe-area">
+      <div className="max-w-md mx-auto w-full space-y-12 no-select">
         {/* App Title */}
         <div className="text-center space-y-4">
-          <h1 className="text-accessible-3xl font-bold text-foreground leading-tight">
+          <h1 className="text-4xl font-bold text-foreground leading-tight tracking-tight">
             Connecting Generations
           </h1>
-          <p className="text-accessible-xl text-muted-foreground font-medium">
+          <p className="text-lg text-muted-foreground">
             Connecting generations through skills
           </p>
         </div>
 
-        {/* Key Benefits */}
-        <Card className="p-6 space-y-6">
-          <div className="flex items-start space-x-4">
-            <Heart className="w-8 h-8 text-accent mt-1 flex-shrink-0" />
-            <div>
-              <h3 className="text-accessible-lg font-semibold text-foreground">
-                Share Your Wisdom
+        {/* Features List */}
+        <div className="space-y-8">
+          <div className="flex items-start gap-4">
+            <IconContainer variant="primary" size="md">
+              <Check className="w-full h-full text-primary" />
+            </IconContainer>
+            <div className="flex-1">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Learn new skills
               </h3>
-              <p className="text-accessible-base text-muted-foreground">
-                Teach valuable skills and learn new ones from different generations
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Tap into a wealth of experience from older generations.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start space-x-4">
-            <Users className="w-8 h-8 text-accent mt-1 flex-shrink-0" />
-            <div>
-              <h3 className="text-accessible-lg font-semibold text-foreground">
-                Build Connections
+          <div className="flex items-start gap-4">
+            <IconContainer variant="primary" size="md">
+              <Check className="w-full h-full text-primary" />
+            </IconContainer>
+            <div className="flex-1">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Share your knowledge
               </h3>
-              <p className="text-accessible-base text-muted-foreground">
-                Meet like-minded people and create meaningful relationships
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Pass on your expertise to eager young learners.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start space-x-4">
-            <Lightbulb className="w-8 h-8 text-accent mt-1 flex-shrink-0" />
-            <div>
-              <h3 className="text-accessible-lg font-semibold text-foreground">
-                Safe Learning
+          <div className="flex items-start gap-4">
+            <IconContainer variant="primary" size="md">
+              <Check className="w-full h-full text-primary" />
+            </IconContainer>
+            <div className="flex-1">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                Build connections
               </h3>
-              <p className="text-accessible-base text-muted-foreground">
-                Verified users and secure communication for peace of mind
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Forge meaningful relationships across age groups.
               </p>
             </div>
           </div>
-        </Card>
+        </div>
 
-        {/* Get Started Button */}
-        <Button 
-          onClick={handleGetStarted}
-          size="lg"
-          className="w-full touch-target text-accessible-lg font-semibold"
-        >
-          Get Started
-        </Button>
+        {/* CTA Button */}
+        <div className="pt-8">
+          <Button 
+            onClick={handleGetStarted}
+            size="full"
+            className="touch-target font-semibold text-lg"
+          >
+            Get Started
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -9,47 +9,62 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* High contrast color system for accessibility */
+    /* Base colors - clean and modern */
     --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
-
+    --foreground: 220 25% 15%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
-
+    --card-foreground: 220 25% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
-
-    /* Strong primary colors for clear CTAs */
-    --primary: 142 76% 36%;
-    --primary-foreground: 0 0% 98%;
-
-    /* Accessible secondary colors */
-    --secondary: 0 0% 94%;
-    --secondary-foreground: 0 0% 8%;
-
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 45%;
-
-    /* Warm accent for friendly interactions */
-    --accent: 24 100% 50%;
-    --accent-foreground: 0 0% 98%;
-
+    --popover-foreground: 220 25% 15%;
+    
+    /* Primary blue - main brand color from designs */
+    --primary: 207 90% 54%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 207 90% 48%;
+    --primary-light: 207 85% 85%;
+    
+    /* Secondary colors */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 25% 15%;
+    
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 10% 50%;
+    
+    /* Accent colors */
+    --accent: 210 25% 92%;
+    --accent-foreground: 220 25% 15%;
+    
+    /* Status colors */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
-    --ring: 142 76% 36%;
-
-    /* Accessibility-specific variables */
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Border and input */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 207 90% 54%;
+    
+    /* Shadows - subtle elevation */
+    --shadow-card: 0 2px 8px -2px hsl(220 25% 15% / 0.1);
+    --shadow-button: 0 1px 3px hsl(220 25% 15% / 0.12);
+    --shadow-floating: 0 8px 24px -4px hsl(220 25% 15% / 0.15);
+    
+    /* Accessibility and design system variables */
     --text-large: 1.25rem;
     --text-xl: 1.5rem;
     --text-2xl: 2rem;
     --text-3xl: 2.5rem;
-    --touch-target: 44px;
+    --touch-target: 48px;
     --spacing-comfortable: 1.5rem;
-
-    --radius: 0.5rem;
+    --mobile-padding: 1rem;
+    
+    /* Radius - rounded corners like in designs */
+    --radius: 12px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -69,34 +84,36 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* High contrast dark mode */
-    --background: 0 0% 8%;
+    /* Dark mode with consistent blue theme */
+    --background: 220 25% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
+    --card: 220 20% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 12%;
+    --popover: 220 20% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 142 76% 42%;
-    --primary-foreground: 0 0% 8%;
+    --primary: 207 85% 65%;
+    --primary-foreground: 220 25% 8%;
+    --primary-hover: 207 85% 60%;
+    --primary-light: 207 85% 25%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 220 15% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 24 100% 55%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 220 15% 20%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 65%;
-    --destructive-foreground: 0 0% 8%;
+    --destructive-foreground: 220 25% 8%;
 
-    --border: 0 0% 25%;
-    --input: 0 0% 25%;
-    --ring: 142 76% 42%;
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 207 85% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
