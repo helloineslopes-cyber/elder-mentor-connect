@@ -46,9 +46,7 @@ const TeachSkillsSelection = () => {
           <h1 className="text-3xl font-bold text-foreground mb-2">
             O que quer ensinar?
           </h1>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Selecione as áreas em que você tem conhecimento para ensinar
-          </p>
+          <p className="text-muted-foreground text-lg max-w-md mx-auto">Selecione as áreas em que tem conhecimento para ensinar.</p>
         </div>
       </div>
 
