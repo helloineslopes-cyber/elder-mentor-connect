@@ -9,7 +9,7 @@ import { IconContainer } from "@/components/ui/icon";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { User, Camera, ArrowRight, ArrowLeft, CalendarIcon } from "lucide-react";
+import { User, Camera, ArrowRight, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
@@ -86,38 +86,41 @@ const ProfileSetup = () => {
 
             <div className="space-y-2">
               <Label htmlFor="birthDate">Data de nascimento*</Label>
-              <Popover modal={true}>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className={cn(
-                      "w-full justify-start text-left font-normal",
-                      !formData.birthDate && "text-muted-foreground"
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {formData.birthDate ? (
-                      format(formData.birthDate, "dd/MM/yyyy")
-                    ) : (
-                      <span>Selecione a data</span>
-                    )}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0 z-[100]" align="start">
-                  <Calendar
-                    mode="single"
-                    selected={formData.birthDate}
-                    onSelect={(date) => {
-                      console.log("Date selected:", date);
+              <Input
+                id="birthDate"
+                placeholder="dd/mm/yyyy"
+                value={formData.birthDate ? format(formData.birthDate, "dd/MM/yyyy") : ""}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Auto-format as user types
+                  let formatted = value.replace(/\D/g, ''); // Remove non-digits
+                  if (formatted.length >= 2) {
+                    formatted = formatted.substring(0, 2) + '/' + formatted.substring(2);
+                  }
+                  if (formatted.length >= 5) {
+                    formatted = formatted.substring(0, 5) + '/' + formatted.substring(5, 9);
+                  }
+                  
+                  // Try to parse the date if complete
+                  if (formatted.length === 10) {
+                    const [day, month, year] = formatted.split('/').map(Number);
+                    const date = new Date(year, month - 1, day);
+                    
+                    // Validate the date
+                    if (date.getDate() === day && date.getMonth() === month - 1 && date.getFullYear() === year) {
                       setFormData(prev => ({ ...prev, birthDate: date }));
-                    }}
-                    disabled={(date) =>
-                      date > new Date() || date < new Date("1900-01-01")
+                    } else {
+                      setFormData(prev => ({ ...prev, birthDate: undefined }));
                     }
-                    initialFocus
-                  />
-                </PopoverContent>
-              </Popover>
+                  } else {
+                    setFormData(prev => ({ ...prev, birthDate: undefined }));
+                  }
+                  
+                  // Update the input display
+                  e.target.value = formatted;
+                }}
+                maxLength={10}
+              />
             </div>
 
             <div className="space-y-2">
