@@ -9,27 +9,29 @@ import { IconContainer } from "@/components/ui/icon";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { User, Camera, ArrowRight, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 const ProfileSetup = () => {
   const navigate = useNavigate();
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     age: "",
     bio: "",
-    location: "",
+    location: ""
   });
-
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
   };
-
   const handleContinue = () => {
     if (!formData.name || !formData.age || !formData.bio) {
       toast({
         title: "Campos obrigatórios",
         description: "Por favor, preencha todos os campos obrigatórios.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
@@ -37,13 +39,10 @@ const ProfileSetup = () => {
     // TODO: Save profile data when Supabase is connected
     navigate("/skills-selection");
   };
-
   const handleBack = () => {
     navigate("/select-user-type");
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-subtle flex flex-col">
+  return <div className="min-h-screen bg-gradient-subtle flex flex-col">
       {/* Header */}
       <div className="pt-8 pb-8 px-6">
         <div className="max-w-md mx-auto">
@@ -56,7 +55,7 @@ const ProfileSetup = () => {
         
         <div className="text-center">
         <IconContainer className="mx-auto mb-6">
-          <User className="w-8 h-8" />
+          
         </IconContainer>
         <h1 className="text-3xl font-bold text-foreground mb-2">
           Configure seu Perfil
@@ -75,10 +74,7 @@ const ProfileSetup = () => {
               <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center border-2 border-dashed border-border">
                 <Camera className="w-8 h-8 text-muted-foreground" />
               </div>
-              <Button
-                size="sm"
-                className="absolute -bottom-2 -right-2 rounded-full h-8 w-8 p-0"
-              >
+              <Button size="sm" className="absolute -bottom-2 -right-2 rounded-full h-8 w-8 p-0">
                 <Camera className="w-4 h-4" />
               </Button>
             </div>
@@ -88,59 +84,31 @@ const ProfileSetup = () => {
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="name">Nome completo *</Label>
-              <Input
-                id="name"
-                placeholder="Digite seu nome completo"
-                value={formData.name}
-                onChange={(e) => handleInputChange("name", e.target.value)}
-              />
+              <Input id="name" placeholder="Digite seu nome completo" value={formData.name} onChange={e => handleInputChange("name", e.target.value)} />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="age">Idade *</Label>
-              <Input
-                id="age"
-                type="number"
-                placeholder="Digite sua idade"
-                value={formData.age}
-                onChange={(e) => handleInputChange("age", e.target.value)}
-              />
+              <Input id="age" type="number" placeholder="Digite sua idade" value={formData.age} onChange={e => handleInputChange("age", e.target.value)} />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="location">Localização</Label>
-              <Input
-                id="location"
-                placeholder="Cidade, Estado"
-                value={formData.location}
-                onChange={(e) => handleInputChange("location", e.target.value)}
-              />
+              <Input id="location" placeholder="Cidade, Estado" value={formData.location} onChange={e => handleInputChange("location", e.target.value)} />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="bio">Sobre você *</Label>
-              <Textarea
-                id="bio"
-                placeholder="Conte um pouco sobre suas experiências, interesses e o que está procurando..."
-                className="min-h-[100px] resize-none"
-                value={formData.bio}
-                onChange={(e) => handleInputChange("bio", e.target.value)}
-              />
+              <Textarea id="bio" placeholder="Conte um pouco sobre suas experiências, interesses e o que está procurando..." className="min-h-[100px] resize-none" value={formData.bio} onChange={e => handleInputChange("bio", e.target.value)} />
             </div>
 
-            <Button 
-              onClick={handleContinue}
-              size="full"
-              className="mt-8"
-            >
+            <Button onClick={handleContinue} size="full" className="mt-8">
               Continuar
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ProfileSetup;
