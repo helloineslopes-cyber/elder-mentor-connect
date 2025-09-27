@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { ProgressBar } from "@/components/ui/progress-bar";
+import ageIllustration from "@/assets/age-illustration.png";
 const SelectUserType = () => {
   const navigate = useNavigate();
   const handleUserTypeSelection = (userType: "younger" | "older") => {
@@ -28,10 +29,19 @@ const SelectUserType = () => {
         </div>
 
         {/* User Type Buttons */}
-        <div className="space-y-4">
+        <div className="space-y-4 mb-8">
           <Button variant="default" size="full" onClick={() => handleUserTypeSelection("younger")} className="h-16 text-xl font-semibold">Jovem</Button>
 
           <Button variant="default" size="full" onClick={() => handleUserTypeSelection("older")} className="h-16 text-xl font-semibold">Sénior</Button>
+        </div>
+
+        {/* Illustration */}
+        <div className="text-center">
+          <img 
+            src={ageIllustration} 
+            alt="Ilustração de pessoas de diferentes idades" 
+            className="w-64 h-auto mx-auto opacity-80"
+          />
         </div>
       </div>
     </div>;
