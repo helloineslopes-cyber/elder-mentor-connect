@@ -53,7 +53,7 @@ const SkillsSelection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen bg-gradient-to-br from-background to-muted">
       {/* Header */}
       <div className="pt-8 pb-6 px-6">
         <div className="max-w-md mx-auto">
@@ -127,7 +127,7 @@ const SkillsSelection = () => {
         {(teachSkills.length > 0 || learnSkills.length > 0) && (
           <div className="max-w-4xl mx-auto mt-6 space-y-4">
             {teachSkills.length > 0 && (
-              <Card className="bg-primary-light/50 border-primary/20">
+              <Card className="bg-primary/10 border-primary/20">
                 <CardContent className="p-4">
                   <p className="text-sm font-medium text-primary mb-2">
                     Quero ensinar ({teachSkills.length}):
@@ -144,7 +144,7 @@ const SkillsSelection = () => {
             )}
             
             {learnSkills.length > 0 && (
-              <Card className="bg-secondary-light/50 border-secondary/20">
+              <Card className="bg-secondary/10 border-secondary/20">
                 <CardContent className="p-4">
                   <p className="text-sm font-medium text-secondary mb-2">
                     Quero aprender ({learnSkills.length}):

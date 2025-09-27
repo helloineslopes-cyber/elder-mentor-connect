@@ -7,6 +7,7 @@ import Welcome from "./pages/Welcome";
 import SelectUserType from "./pages/SelectUserType";
 import ProfileSetup from "./pages/ProfileSetup";
 import SkillsSelection from "./pages/SkillsSelection";
+import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/select-user-type" element={<SelectUserType />} />
           <Route path="/profile-setup" element={<ProfileSetup />} />
           <Route path="/skills-selection" element={<SkillsSelection />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
