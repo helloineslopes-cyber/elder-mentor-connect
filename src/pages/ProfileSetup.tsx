@@ -86,7 +86,7 @@ const ProfileSetup = () => {
 
             <div className="space-y-2">
               <Label htmlFor="birthDate">Data de nascimento*</Label>
-              <Popover>
+              <Popover modal={true}>
                 <PopoverTrigger asChild>
                   <Button
                     variant="outline"
@@ -103,16 +103,18 @@ const ProfileSetup = () => {
                     )}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0 z-50" align="start">
+                <PopoverContent className="w-auto p-0 z-[100]" align="start">
                   <Calendar
                     mode="single"
                     selected={formData.birthDate}
-                    onSelect={(date) => setFormData(prev => ({ ...prev, birthDate: date }))}
+                    onSelect={(date) => {
+                      console.log("Date selected:", date);
+                      setFormData(prev => ({ ...prev, birthDate: date }));
+                    }}
                     disabled={(date) =>
                       date > new Date() || date < new Date("1900-01-01")
                     }
                     initialFocus
-                    className="p-3 pointer-events-auto"
                   />
                 </PopoverContent>
               </Popover>
