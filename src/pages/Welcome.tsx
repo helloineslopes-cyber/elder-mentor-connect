@@ -32,10 +32,8 @@ const Welcome = () => {
               <Check className="w-full h-full text-primary" />
             </IconContainer>
             <div className="flex-1">
-              <h3 className="text-xl font-semibold text-foreground mb-2">Partilha o que sabes</h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                Pass on your expertise to eager young learners.
-              </p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Dá o teu contributo</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">Partilha o que sabes e deixa a tua marca.</p>
             </div>
           </div>
 
@@ -44,21 +42,15 @@ const Welcome = () => {
               <Check className="w-full h-full text-primary" />
             </IconContainer>
             <div className="flex-1">
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                Build connections
-              </h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                Forge meaningful relationships across age groups.
-              </p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Cria conexões</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">Constrói relações reais que aproximam jovens e mais velhos.</p>
             </div>
           </div>
         </div>
 
         {/* CTA Button */}
         <div className="pt-8">
-          <Button onClick={handleGetStarted} size="full" className="touch-target font-semibold text-lg">
-            Get Started
-          </Button>
+          <Button onClick={handleGetStarted} size="full" className="touch-target font-semibold text-lg">Começar</Button>
         </div>
       </div>
     </div>;
