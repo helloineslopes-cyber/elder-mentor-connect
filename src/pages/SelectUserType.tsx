@@ -24,6 +24,7 @@ const SelectUserType = () => {
         {/* Title */}
         <div className="text-center space-y-4 mb-16">
           <h1 className="text-3xl font-bold text-foreground">Vamos começar!</h1>
+          <p className="text-muted-foreground text-sm">Diga-nos quem é para continuar.</p>
         </div>
 
         {/* User Type Buttons */}
@@ -31,11 +32,6 @@ const SelectUserType = () => {
           <Button variant="default" size="full" onClick={() => handleUserTypeSelection("younger")} className="h-16 text-xl font-semibold">Jovem</Button>
 
           <Button variant="default" size="full" onClick={() => handleUserTypeSelection("older")} className="h-16 text-xl font-semibold">Sénior</Button>
-        </div>
-
-        {/* Helper text */}
-        <div className="text-center mt-8">
-          <p className="text-muted-foreground text-sm">Diga-nos quem é para continuar.</p>
         </div>
       </div>
     </div>;
