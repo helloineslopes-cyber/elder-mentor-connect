@@ -13,38 +13,7 @@ const SkillsSelection = () => {
   const { toast } = useToast();
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
 
-  const skillCategories = [
-    {
-      title: "Tecnologia",
-      icon: Code,
-      skills: ["Programação", "Design UX/UI", "Marketing Digital", "Análise de Dados", "Cibersegurança", "Inteligência Artificial"]
-    },
-    {
-      title: "Criatividade",
-      icon: Palette,
-      skills: ["Design Gráfico", "Fotografia", "Escrita", "Música", "Arte", "Culinária"]
-    },
-    {
-      title: "Negócios",
-      icon: Briefcase,
-      skills: ["Empreendedorismo", "Vendas", "Gestão", "Finanças", "Recursos Humanos", "Consultoria"]
-    },
-    {
-      title: "Bem-estar",
-      icon: Heart,
-      skills: ["Psicologia", "Yoga", "Nutrição", "Fitness", "Meditação", "Coaching"]
-    },
-    {
-      title: "Educação",
-      icon: BookOpen,
-      skills: ["Ensino", "Línguas", "História", "Ciências", "Matemática", "Literatura"]
-    },
-    {
-      title: "Outros",
-      icon: Globe,
-      skills: ["Jardinagem", "Carpintaria", "Costura", "Mecânica", "Viagens", "Voluntariado"]
-    }
-  ];
+  const availableSkills = ["Culinária", "Tricô", "Crochet", "Jardinagem", "Xadrez", "Damas"];
 
   const toggleSkill = (skill: string) => {
     setSelectedSkills(prev => 
@@ -100,34 +69,23 @@ const SkillsSelection = () => {
 
       {/* Skills Grid */}
       <div className="px-6 pb-8">
-        <div className="max-w-4xl mx-auto space-y-6">
-          {skillCategories.map((category) => (
-            <Card key={category.title} className="overflow-hidden">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-primary-light">
-                    <category.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {category.title}
-                  </h3>
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant={selectedSkills.includes(skill) ? "default" : "outline"}
-                      className="cursor-pointer transition-all hover:scale-105"
-                      onClick={() => toggleSkill(skill)}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <Card className="overflow-hidden">
+            <CardContent className="p-6">
+              <div className="flex flex-wrap gap-3 justify-center">
+                {availableSkills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant={selectedSkills.includes(skill) ? "default" : "outline"}
+                    className="cursor-pointer transition-all hover:scale-105 text-base px-4 py-2"
+                    onClick={() => toggleSkill(skill)}
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Selected Skills Summary */}
