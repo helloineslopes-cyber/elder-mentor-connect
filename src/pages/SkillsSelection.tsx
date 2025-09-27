@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconContainer } from "@/components/ui/icon";
+import { ProgressBar } from "@/components/ui/progress-bar";
 import { ArrowLeft, ArrowRight, Target, Code, Palette, Camera, Music, BookOpen, Heart, Briefcase, Globe, Cpu } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -76,9 +77,13 @@ const SkillsSelection = () => {
     <div className="min-h-screen bg-gradient-subtle">
       {/* Header */}
       <div className="pt-8 pb-6 px-6">
-        <Button variant="ghost" onClick={handleBack} className="mb-6 -ml-2" size="sm">
-          <ArrowLeft className="w-5 h-5" />
-        </Button>
+        <div className="max-w-md mx-auto">
+          <Button variant="ghost" onClick={handleBack} className="mb-6 -ml-2" size="sm">
+            <ArrowLeft className="w-5 h-5" />
+          </Button>
+          
+          <ProgressBar currentStep={3} totalSteps={3} className="mb-8" />
+        </div>
         
         <div className="text-center mb-8">
           <IconContainer className="mx-auto mb-4">

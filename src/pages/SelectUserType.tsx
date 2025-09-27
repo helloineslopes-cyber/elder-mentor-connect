@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { ProgressBar } from "@/components/ui/progress-bar";
 const SelectUserType = () => {
   const navigate = useNavigate();
   const handleUserTypeSelection = (userType: "younger" | "older") => {
@@ -14,9 +15,11 @@ const SelectUserType = () => {
   return <div className="min-h-screen bg-background px-6 py-8 flex flex-col mobile-safe-area">
       {/* Header with back button */}
       <div className="max-w-md mx-auto w-full no-select">
-        <Button variant="ghost" onClick={handleBack} className="mb-8 -ml-2" size="sm">
+        <Button variant="ghost" onClick={handleBack} className="mb-6 -ml-2" size="sm">
           <ArrowLeft className="w-5 h-5" />
         </Button>
+        
+        <ProgressBar currentStep={1} totalSteps={3} className="mb-8" />
 
         {/* Title */}
         <div className="text-center space-y-4 mb-16">

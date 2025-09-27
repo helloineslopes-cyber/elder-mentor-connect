@@ -6,7 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { IconContainer } from "@/components/ui/icon";
-import { User, Camera, ArrowRight } from "lucide-react";
+import { ProgressBar } from "@/components/ui/progress-bar";
+import { User, Camera, ArrowRight, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ProfileSetup = () => {
@@ -37,19 +38,33 @@ const ProfileSetup = () => {
     navigate("/skills-selection");
   };
 
+  const handleBack = () => {
+    navigate("/select-user-type");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-subtle flex flex-col">
       {/* Header */}
-      <div className="pt-12 pb-8 px-6 text-center">
+      <div className="pt-8 pb-8 px-6">
+        <div className="max-w-md mx-auto">
+          <Button variant="ghost" onClick={handleBack} className="mb-6 -ml-2" size="sm">
+            <ArrowLeft className="w-5 h-5" />
+          </Button>
+          
+          <ProgressBar currentStep={2} totalSteps={3} className="mb-8" />
+        </div>
+        
+        <div className="text-center">
         <IconContainer className="mx-auto mb-6">
           <User className="w-8 h-8" />
         </IconContainer>
         <h1 className="text-3xl font-bold text-foreground mb-2">
           Configure seu Perfil
         </h1>
-        <p className="text-muted-foreground text-lg max-w-md mx-auto">
-          Conte-nos um pouco sobre você para encontrarmos as melhores conexões
-        </p>
+          <p className="text-muted-foreground text-lg max-w-md mx-auto">
+            Conte-nos um pouco sobre você para encontrarmos as melhores conexões
+          </p>
+        </div>
       </div>
 
       {/* Form */}
