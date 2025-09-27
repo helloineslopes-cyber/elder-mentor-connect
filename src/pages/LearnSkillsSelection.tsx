@@ -73,7 +73,7 @@ const LearnSkillsSelection = () => {
           <h1 className="text-3xl font-bold text-foreground mb-2">
             O que quer aprender?
           </h1>
-          <p className="text-muted-foreground max-w-md mx-auto text-2xl">
+          <p className="text-muted-foreground max-w-md mx-auto text-center text-xl">
             Selecione as áreas que gostaria de aprender
           </p>
         </div>
