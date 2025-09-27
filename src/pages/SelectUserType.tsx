@@ -23,7 +23,7 @@ const SelectUserType = () => {
 
         {/* Title */}
         <div className="text-center space-y-4 mb-16">
-          <h1 className="text-3xl font-bold text-foreground">Qual é você?</h1>
+          <h1 className="text-3xl font-bold text-foreground">Quem é você?</h1>
         </div>
 
         {/* User Type Buttons */}
