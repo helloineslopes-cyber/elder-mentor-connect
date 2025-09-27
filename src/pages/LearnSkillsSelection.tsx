@@ -68,7 +68,7 @@ const LearnSkillsSelection = () => {
           <ProgressBar currentStep={4} totalSteps={4} className="mb-8" />
         </div>
         
-        <div className="text-center mb-8">
+        <div className="text-center mb-4">
           <IconContainer className="mx-auto mb-4">
             <Target className="w-8 h-8" />
           </IconContainer>
