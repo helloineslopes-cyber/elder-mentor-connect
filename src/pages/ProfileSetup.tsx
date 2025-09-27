@@ -7,8 +7,12 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { IconContainer } from "@/components/ui/icon";
 import { ProgressBar } from "@/components/ui/progress-bar";
-import { User, Camera, ArrowRight, ArrowLeft } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { User, Camera, ArrowRight, ArrowLeft, CalendarIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
 const ProfileSetup = () => {
   const navigate = useNavigate();
   const {
@@ -16,10 +20,11 @@ const ProfileSetup = () => {
   } = useToast();
   const [formData, setFormData] = useState({
     name: "",
-    age: "",
+    birthDate: undefined as Date | undefined,
     bio: "",
     location: ""
   });
+  const [date, setDate] = useState<Date>();
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
@@ -27,7 +32,7 @@ const ProfileSetup = () => {
     }));
   };
   const handleContinue = () => {
-    if (!formData.name || !formData.age || !formData.bio) {
+    if (!formData.name || !formData.birthDate || !formData.bio) {
       toast({
         title: "Campos obrigatórios",
         description: "Por favor, preencha todos os campos obrigatórios.",
@@ -81,8 +86,37 @@ const ProfileSetup = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="age">Idade*</Label>
-              <Input id="age" type="number" placeholder="Ex: 67" value={formData.age} onChange={e => handleInputChange("age", e.target.value)} />
+              <Label htmlFor="birthDate">Data de nascimento*</Label>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      "w-full justify-start text-left font-normal",
+                      !formData.birthDate && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {formData.birthDate ? (
+                      format(formData.birthDate, "dd/MM/yyyy")
+                    ) : (
+                      <span>Selecione a data</span>
+                    )}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={formData.birthDate}
+                    onSelect={(date) => setFormData(prev => ({ ...prev, birthDate: date }))}
+                    disabled={(date) =>
+                      date > new Date() || date < new Date("1900-01-01")
+                    }
+                    initialFocus
+                    className={cn("p-3 pointer-events-auto")}
+                  />
+                </PopoverContent>
+              </Popover>
             </div>
 
             <div className="space-y-2">
