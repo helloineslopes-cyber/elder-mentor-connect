@@ -18,12 +18,16 @@ const TeachSkillsSelection = () => {
     setTeachSkills(prev => prev.includes(skill) ? prev.filter(s => s !== skill) : [...prev, skill]);
   };
   const handleContinue = () => {
-    // Save teach skills to localStorage or context for next step
-    if (teachSkills.length > 0) {
-      localStorage.setItem('teachSkills', JSON.stringify(teachSkills));
-    } else {
-      localStorage.removeItem('teachSkills');
+    if (teachSkills.length === 0) {
+      toast({
+        title: "Selecione pelo menos uma área",
+        description: "Escolha pelo menos uma área que você pode ensinar.",
+        variant: "destructive"
+      });
+      return;
     }
+
+    localStorage.setItem('teachSkills', JSON.stringify(teachSkills));
     console.log("Teach skills:", teachSkills);
     navigate("/learn-skills-selection");
   };
@@ -68,7 +72,7 @@ const TeachSkillsSelection = () => {
         {/* Continue Button */}
         <div className="max-w-md mx-auto mt-8">
           <Button onClick={handleContinue} size="full" className="h-12">
-            {teachSkills.length > 0 ? 'Continuar' : 'Pular esta etapa'}
+            Continuar
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </div>

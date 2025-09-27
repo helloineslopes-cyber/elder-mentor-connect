@@ -26,10 +26,19 @@ const LearnSkillsSelection = () => {
     setLearnSkills(prev => prev.includes(skill) ? prev.filter(s => s !== skill) : [...prev, skill]);
   };
   const handleContinue = () => {
-    if (teachSkills.length === 0 && learnSkills.length === 0) {
+    if (teachSkills.length === 0) {
+      toast({
+        title: "Volte e selecione áreas para ensinar",
+        description: "Você deve escolher pelo menos uma área que pode ensinar.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (learnSkills.length === 0) {
       toast({
         title: "Selecione pelo menos uma área",
-        description: "Escolha pelo menos uma área que quer ensinar ou aprender.",
+        description: "Escolha pelo menos uma área que gostaria de aprender.",
         variant: "destructive"
       });
       return;
@@ -88,7 +97,7 @@ const LearnSkillsSelection = () => {
         {/* Continue Button */}
         <div className="max-w-md mx-auto mt-8">
           <Button onClick={handleContinue} size="full" className="h-12">
-            {learnSkills.length > 0 ? 'Finalizar' : 'Pular esta etapa'}
+            Finalizar
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </div>
