@@ -41,7 +41,7 @@ const TeachSkillsSelection = () => {
           <ProgressBar currentStep={3} totalSteps={4} className="mb-8" />
         </div>
         
-        <div className="text-center mb-8">
+        <div className="text-center mb-4">
           
           <h1 className="text-3xl font-bold text-foreground mb-2">
             O que quer ensinar?
