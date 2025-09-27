@@ -86,7 +86,7 @@ const LearnSkillsSelection = () => {
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="overflow-hidden">
             <CardContent className="p-6">
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center">
                 {availableSkills.map((skill) => (
                   <Badge
                     key={skill}

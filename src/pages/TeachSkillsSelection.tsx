@@ -57,7 +57,7 @@ const TeachSkillsSelection = () => {
         <div className="max-w-4xl mx-auto space-y-6">
           <Card className="overflow-hidden">
             <CardContent className="p-6 px-[24px] py-[24px] my-0">
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center">
                 {availableSkills.map(skill => <Badge key={skill} variant={teachSkills.includes(skill) ? "default" : "outline"} className="cursor-pointer transition-all hover:scale-105 text-base px-4 py-2" onClick={() => toggleTeachSkill(skill)}>
                     {skill}
                   </Badge>)}
