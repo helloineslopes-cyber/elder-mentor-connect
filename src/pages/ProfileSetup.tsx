@@ -57,12 +57,8 @@ const ProfileSetup = () => {
         <IconContainer className="mx-auto mb-6">
           
         </IconContainer>
-        <h1 className="text-3xl font-bold text-foreground mb-2">
-          Configure seu Perfil
-        </h1>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Conte-nos um pouco sobre você para encontrarmos as melhores conexões
-          </p>
+        <h1 className="text-3xl font-bold text-foreground mb-2">Configure o seu perfil</h1>
+          <p className="text-muted-foreground text-lg max-w-md mx-auto">Conte-nos um pouco sobre si para encontrarmos as melhores conexões</p>
         </div>
       </div>
 
@@ -74,31 +70,29 @@ const ProfileSetup = () => {
               <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center border-2 border-dashed border-border">
                 <Camera className="w-8 h-8 text-muted-foreground" />
               </div>
-              <Button size="sm" className="absolute -bottom-2 -right-2 rounded-full h-8 w-8 p-0">
-                <Camera className="w-4 h-4" />
-              </Button>
+              
             </div>
             <CardTitle className="text-xl">Adicione sua foto</CardTitle>
           </CardHeader>
 
           <CardContent className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="name">Nome completo *</Label>
+              <Label htmlFor="name">Nome*</Label>
               <Input id="name" placeholder="Digite seu nome completo" value={formData.name} onChange={e => handleInputChange("name", e.target.value)} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="age">Idade *</Label>
+              <Label htmlFor="age">Idade*</Label>
               <Input id="age" type="number" placeholder="Digite sua idade" value={formData.age} onChange={e => handleInputChange("age", e.target.value)} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="location">Localização</Label>
+              <Label htmlFor="location">Localização*</Label>
               <Input id="location" placeholder="Cidade, Estado" value={formData.location} onChange={e => handleInputChange("location", e.target.value)} />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="bio">Sobre você *</Label>
+              <Label htmlFor="bio">Sobre si*</Label>
               <Textarea id="bio" placeholder="Conte um pouco sobre suas experiências, interesses e o que está procurando..." className="min-h-[100px] resize-none" value={formData.bio} onChange={e => handleInputChange("bio", e.target.value)} />
             </div>
 
