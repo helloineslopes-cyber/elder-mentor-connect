@@ -67,9 +67,6 @@ const LearnSkillsSelection = () => {
         </div>
         
         <div className="text-center mb-4">
-          <IconContainer className="mx-auto mb-4">
-            <Target className="w-8 h-8" />
-          </IconContainer>
           <h1 className="text-3xl font-bold text-foreground mb-2">
             O que quer aprender?
           </h1>
