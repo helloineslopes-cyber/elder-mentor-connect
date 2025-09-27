@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { ProgressBar } from "@/components/ui/progress-bar";
-import { BackgroundRemovedImage } from "@/components/ui/background-removed-image";
-import illustrationSrc from "@/assets/age-selection-illustration.png";
 const SelectUserType = () => {
   const navigate = useNavigate();
   const handleUserTypeSelection = (userType: "younger" | "older") => {
@@ -22,16 +20,6 @@ const SelectUserType = () => {
         </Button>
         
         <ProgressBar currentStep={1} totalSteps={5} className="mb-8" />
-
-        {/* Illustration */}
-        <div className="flex justify-center mb-8">
-          <BackgroundRemovedImage 
-            src={illustrationSrc}
-            alt="Ilustração de pessoas jovens e seniores"
-            className="w-48 h-32 object-contain"
-            fallbackSrc={illustrationSrc}
-          />
-        </div>
 
         {/* Title */}
         <div className="text-center space-y-4 mb-16">
