@@ -4,9 +4,9 @@ import { ArrowLeft } from "lucide-react";
 const SelectUserType = () => {
   const navigate = useNavigate();
   const handleUserTypeSelection = (userType: "younger" | "older") => {
-    // For now, we'll navigate to home. In Phase 2, this will go to profile setup
+    // Navigate to profile setup
     console.log(`Selected user type: ${userType}`);
-    navigate("/");
+    navigate("/profile-setup");
   };
   const handleBack = () => {
     navigate("/");
