@@ -138,7 +138,7 @@ const Dashboard = () => {
             className="w-full flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground"
           >
             <LogOut className="w-4 h-4" />
-            Terminar sessão
+            Sair
           </Button>
         </div>
       </div>
