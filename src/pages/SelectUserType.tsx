@@ -22,7 +22,7 @@ const SelectUserType = () => {
         <ProgressBar currentStep={1} totalSteps={3} className="mb-8" />
 
         {/* Title */}
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-center space-y-4 mb-8">
           <h1 className="text-3xl font-bold text-foreground">Vamos começar!</h1>
           <p className="text-muted-foreground text-sm">Escolha a sua faixa etária</p>
         </div>
