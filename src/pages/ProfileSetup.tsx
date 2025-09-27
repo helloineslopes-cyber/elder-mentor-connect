@@ -36,7 +36,8 @@ const ProfileSetup = () => {
       return;
     }
 
-    // TODO: Save profile data when Supabase is connected
+    // Save profile data to localStorage
+    localStorage.setItem("userProfile", JSON.stringify(formData));
     navigate("/teach-skills-selection");
   };
   const handleBack = () => {

@@ -1,16 +1,29 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { IconContainer } from "@/components/ui/icon";
 import { Home, User, BookOpen, Users } from "lucide-react";
+
 const Dashboard = () => {
-  return <div className="min-h-screen bg-gradient-to-br from-background to-muted">
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    const userProfile = localStorage.getItem("userProfile");
+    if (userProfile) {
+      const profile = JSON.parse(userProfile);
+      setUserName(profile.name);
+    }
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-background to-muted">
       {/* Header */}
       <div className="pt-8 pb-6 px-6">
         <div className="text-center mb-8">
           <IconContainer className="mx-auto mb-4">
             <Home className="w-8 h-8" />
           </IconContainer>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Bem-vindo, </h1>
+          <h1 className="text-3xl font-bold text-foreground mb-2">Olá, {userName}</h1>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">Faça aqui a gestão das suas conexões.</p>
         </div>
       </div>
@@ -87,6 +100,8 @@ const Dashboard = () => {
           </Card>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Dashboard;
