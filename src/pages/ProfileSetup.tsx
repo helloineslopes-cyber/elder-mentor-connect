@@ -55,7 +55,7 @@ const ProfileSetup = () => {
         
         <div className="text-center">
         <IconContainer className="mx-auto mb-6">
-          
+          <User className="w-8 h-8" />
         </IconContainer>
         <h1 className="text-3xl font-bold text-foreground mb-2">Configure o seu perfil</h1>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">Conte-nos um pouco sobre si para encontrarmos as melhores conexões</p>
@@ -78,7 +78,7 @@ const ProfileSetup = () => {
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="name">Nome*</Label>
-              <Input id="name" placeholder="Digite seu nome completo" value={formData.name} onChange={e => handleInputChange("name", e.target.value)} />
+              <Input id="name" placeholder="Ex: Maria" value={formData.name} onChange={e => handleInputChange("name", e.target.value)} />
             </div>
 
             <div className="space-y-2">
