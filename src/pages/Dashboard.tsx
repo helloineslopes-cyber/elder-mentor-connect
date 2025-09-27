@@ -91,7 +91,7 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                Acesse suas conversas e mensagens
+                Aceda às suas mensagens
               </p>
               <Button variant="outline" className="w-full">
                 Ver Mensagens
