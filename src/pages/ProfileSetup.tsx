@@ -88,7 +88,7 @@ const ProfileSetup = () => {
 
             <div className="space-y-2">
               <Label htmlFor="location">Localização*</Label>
-              <Input id="location" placeholder="Cidade, Estado" value={formData.location} onChange={e => handleInputChange("location", e.target.value)} />
+              <Input id="location" placeholder="Ex: Lisboa" value={formData.location} onChange={e => handleInputChange("location", e.target.value)} />
             </div>
 
             <div className="space-y-2">
