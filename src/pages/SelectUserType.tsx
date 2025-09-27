@@ -17,9 +17,9 @@ const SelectUserType = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background px-4 py-8 flex flex-col">
+    <div className="min-h-screen bg-background px-4 py-8 flex flex-col mobile-safe-area">
       {/* Header with back button */}
-      <div className="max-w-md mx-auto w-full">
+      <div className="max-w-md mx-auto w-full no-select">
         <Button 
           variant="ghost" 
           onClick={handleBack}

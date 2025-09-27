@@ -11,8 +11,8 @@ const Welcome = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background px-4 py-8 flex flex-col justify-center">
-      <div className="max-w-md mx-auto w-full space-y-8">
+    <div className="min-h-screen bg-background px-4 py-8 flex flex-col justify-center mobile-safe-area">
+      <div className="max-w-md mx-auto w-full space-y-8 no-select">
         {/* App Title */}
         <div className="text-center space-y-4">
           <h1 className="text-accessible-3xl font-bold text-foreground leading-tight">
