@@ -24,7 +24,6 @@ const ProfileSetup = () => {
     bio: "",
     location: ""
   });
-  const [date, setDate] = useState<Date>();
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
@@ -32,7 +31,7 @@ const ProfileSetup = () => {
     }));
   };
   const handleContinue = () => {
-    if (!formData.name || !formData.birthDate || !formData.bio) {
+    if (!formData.name || !formData.birthDate || !formData.bio || !formData.location) {
       toast({
         title: "Campos obrigatórios",
         description: "Por favor, preencha todos os campos obrigatórios.",
@@ -104,7 +103,7 @@ const ProfileSetup = () => {
                     )}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent className="w-auto p-0 z-50" align="start">
                   <Calendar
                     mode="single"
                     selected={formData.birthDate}
@@ -113,7 +112,7 @@ const ProfileSetup = () => {
                       date > new Date() || date < new Date("1900-01-01")
                     }
                     initialFocus
-                    className={cn("p-3 pointer-events-auto")}
+                    className="p-3 pointer-events-auto"
                   />
                 </PopoverContent>
               </Popover>
