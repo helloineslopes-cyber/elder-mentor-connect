@@ -1,28 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconContainer } from "@/components/ui/icon";
 import { ProgressBar } from "@/components/ui/progress-bar";
-import { ArrowLeft, ArrowRight, Target, Code, Palette, Camera, Music, BookOpen, Heart, Briefcase, Globe, Cpu } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const SkillsSelection = () => {
+const LearnSkillsSelection = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [teachSkills, setTeachSkills] = useState<string[]>([]);
   const [learnSkills, setLearnSkills] = useState<string[]>([]);
+  const [teachSkills, setTeachSkills] = useState<string[]>([]);
 
   const availableSkills = ["Culinária", "Tricô", "Crochet", "Jardinagem", "Xadrez", "Damas"];
 
-  const toggleTeachSkill = (skill: string) => {
-    setTeachSkills(prev => 
-      prev.includes(skill) 
-        ? prev.filter(s => s !== skill)
-        : [...prev, skill]
-    );
-  };
+  useEffect(() => {
+    // Load teach skills from previous step
+    const savedTeachSkills = localStorage.getItem('teachSkills');
+    if (savedTeachSkills) {
+      setTeachSkills(JSON.parse(savedTeachSkills));
+    }
+  }, []);
 
   const toggleLearnSkill = (skill: string) => {
     setLearnSkills(prev => 
@@ -45,11 +45,15 @@ const SkillsSelection = () => {
     // TODO: Save skills when Supabase is connected
     console.log("Teach skills:", teachSkills);
     console.log("Learn skills:", learnSkills);
+    
+    // Clean up localStorage
+    localStorage.removeItem('teachSkills');
+    
     navigate("/dashboard");
   };
 
   const handleBack = () => {
-    navigate("/profile-setup");
+    navigate("/teach-skills-selection");
   };
 
   return (
@@ -61,7 +65,7 @@ const SkillsSelection = () => {
             <ArrowLeft className="w-5 h-5" />
           </Button>
           
-          <ProgressBar currentStep={3} totalSteps={3} className="mb-8" />
+          <ProgressBar currentStep={4} totalSteps={4} className="mb-8" />
         </div>
         
         <div className="text-center mb-8">
@@ -69,10 +73,10 @@ const SkillsSelection = () => {
             <Target className="w-8 h-8" />
           </IconContainer>
           <h1 className="text-3xl font-bold text-foreground mb-2">
-            Escolha suas Áreas
+            O que quer aprender?
           </h1>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Selecione o que quer ensinar e o que quer aprender
+            Selecione as áreas que gostaria de aprender
           </p>
         </div>
       </div>
@@ -80,37 +84,12 @@ const SkillsSelection = () => {
       {/* Skills Grid */}
       <div className="px-6 pb-8">
         <div className="max-w-4xl mx-auto space-y-6">
-          {/* Teach Skills Section */}
           <Card className="overflow-hidden">
             <CardContent className="p-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">
-                O que quer ensinar?
-              </h3>
               <div className="flex flex-wrap gap-3">
                 {availableSkills.map((skill) => (
                   <Badge
-                    key={`teach-${skill}`}
-                    variant={teachSkills.includes(skill) ? "default" : "outline"}
-                    className="cursor-pointer transition-all hover:scale-105 text-base px-4 py-2"
-                    onClick={() => toggleTeachSkill(skill)}
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Learn Skills Section */}
-          <Card className="overflow-hidden">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">
-                O que quer aprender?
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {availableSkills.map((skill) => (
-                  <Badge
-                    key={`learn-${skill}`}
+                    key={skill}
                     variant={learnSkills.includes(skill) ? "default" : "outline"}
                     className="cursor-pointer transition-all hover:scale-105 text-base px-4 py-2"
                     onClick={() => toggleLearnSkill(skill)}
@@ -123,7 +102,7 @@ const SkillsSelection = () => {
           </Card>
         </div>
 
-        {/* Selected Skills Summary */}
+        {/* Skills Summary */}
         {(teachSkills.length > 0 || learnSkills.length > 0) && (
           <div className="max-w-4xl mx-auto mt-6 space-y-4">
             {teachSkills.length > 0 && (
@@ -169,7 +148,7 @@ const SkillsSelection = () => {
             size="full"
             className="h-12"
           >
-            Continuar
+            {learnSkills.length > 0 ? 'Finalizar' : 'Pular esta etapa'}
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </div>
@@ -178,4 +157,4 @@ const SkillsSelection = () => {
   );
 };
 
-export default SkillsSelection;
+export default LearnSkillsSelection;

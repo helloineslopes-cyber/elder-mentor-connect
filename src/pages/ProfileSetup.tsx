@@ -37,12 +37,12 @@ const ProfileSetup = () => {
     }
 
     // TODO: Save profile data when Supabase is connected
-    navigate("/skills-selection");
+    navigate("/teach-skills-selection");
   };
   const handleBack = () => {
     navigate("/select-user-type");
   };
-  return <div className="min-h-screen bg-gradient-subtle flex flex-col">
+  return <div className="min-h-screen bg-gradient-to-br from-background to-muted flex flex-col">
       {/* Header */}
       <div className="pt-8 pb-8 px-6">
         <div className="max-w-md mx-auto">
@@ -50,7 +50,7 @@ const ProfileSetup = () => {
             <ArrowLeft className="w-5 h-5" />
           </Button>
           
-          <ProgressBar currentStep={2} totalSteps={3} className="mb-8" />
+          <ProgressBar currentStep={2} totalSteps={4} className="mb-8" />
         </div>
         
         <div className="text-center">

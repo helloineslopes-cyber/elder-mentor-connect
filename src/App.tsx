@@ -6,7 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import SelectUserType from "./pages/SelectUserType";
 import ProfileSetup from "./pages/ProfileSetup";
-import SkillsSelection from "./pages/SkillsSelection";
+import TeachSkillsSelection from "./pages/TeachSkillsSelection";
+import LearnSkillsSelection from "./pages/LearnSkillsSelection";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
@@ -22,7 +23,8 @@ const App = () => (
           <Route path="/" element={<Welcome />} />
           <Route path="/select-user-type" element={<SelectUserType />} />
           <Route path="/profile-setup" element={<ProfileSetup />} />
-          <Route path="/skills-selection" element={<SkillsSelection />} />
+          <Route path="/teach-skills-selection" element={<TeachSkillsSelection />} />
+          <Route path="/learn-skills-selection" element={<LearnSkillsSelection />} />
           <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
