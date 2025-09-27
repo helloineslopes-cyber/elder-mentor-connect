@@ -62,7 +62,7 @@ const LearnSkillsSelection = () => {
             <ArrowLeft className="w-5 h-5" />
           </Button>
           
-          <ProgressBar currentStep={4} totalSteps={4} className="mb-4" />
+          <ProgressBar currentStep={4} totalSteps={4} className="mb-2" />
         </div>
         
         <div className="text-center mb-4">
