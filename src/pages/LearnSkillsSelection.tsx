@@ -60,7 +60,7 @@ const LearnSkillsSelection = () => {
     <div className="min-h-screen bg-gradient-to-br from-background to-muted">
       {/* Header */}
       <div className="pt-8 pb-6 px-6">
-        <div className="max-w-md mx-auto">
+        <div className="max-w-md mx-auto px-6">
           <Button variant="ghost" onClick={handleBack} className="mb-6 -ml-2" size="sm">
             <ArrowLeft className="w-5 h-5" />
           </Button>
