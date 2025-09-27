@@ -8,6 +8,7 @@ import SelectUserType from "./pages/SelectUserType";
 import ProfileSetup from "./pages/ProfileSetup";
 import TeachSkillsSelection from "./pages/TeachSkillsSelection";
 import LearnSkillsSelection from "./pages/LearnSkillsSelection";
+import IDVerification from "./pages/IDVerification";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/profile-setup" element={<ProfileSetup />} />
           <Route path="/teach-skills-selection" element={<TeachSkillsSelection />} />
           <Route path="/learn-skills-selection" element={<LearnSkillsSelection />} />
+          <Route path="/id-verification" element={<IDVerification />} />
           <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

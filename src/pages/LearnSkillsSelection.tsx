@@ -49,7 +49,7 @@ const LearnSkillsSelection = () => {
 
     // Clean up localStorage
     localStorage.removeItem('teachSkills');
-    navigate("/dashboard");
+    navigate("/id-verification");
   };
   const handleBack = () => {
     navigate("/teach-skills-selection");
@@ -62,7 +62,7 @@ const LearnSkillsSelection = () => {
             <ArrowLeft className="w-5 h-5" />
           </Button>
           
-          <ProgressBar currentStep={4} totalSteps={4} className="mb-8" />
+          <ProgressBar currentStep={4} totalSteps={5} className="mb-8" />
         </div>
         
         <div className="text-center mb-4">
