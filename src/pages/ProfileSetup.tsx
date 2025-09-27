@@ -93,7 +93,7 @@ const ProfileSetup = () => {
 
             <div className="space-y-2">
               <Label htmlFor="bio">Sobre si*</Label>
-              <Textarea id="bio" placeholder="Conte um pouco sobre suas experiências, interesses e o que está procurando..." className="min-h-[100px] resize-none" value={formData.bio} onChange={e => handleInputChange("bio", e.target.value)} />
+              <Textarea id="bio" placeholder="Fale um pouco sobre si, os seus interesses e o que o traz aqui" className="min-h-[100px] resize-none" value={formData.bio} onChange={e => handleInputChange("bio", e.target.value)} />
             </div>
 
             <Button onClick={handleContinue} size="full" className="mt-8">
