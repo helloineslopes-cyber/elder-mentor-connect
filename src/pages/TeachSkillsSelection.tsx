@@ -66,21 +66,6 @@ const TeachSkillsSelection = () => {
           </Card>
         </div>
 
-        {/* Selected Skills Summary */}
-        {teachSkills.length > 0 && <div className="max-w-4xl mx-auto mt-6">
-            <Card className="bg-primary/10 border-primary/20">
-              <CardContent className="p-4">
-                <p className="text-sm font-medium text-primary mb-2">
-                  Selecionadas ({teachSkills.length}):
-                </p>
-                <div className="flex flex-wrap gap-1">
-                  {teachSkills.map(skill => <Badge key={skill} variant="secondary" className="text-xs">
-                      {skill}
-                    </Badge>)}
-                </div>
-              </CardContent>
-            </Card>
-          </div>}
 
         {/* Continue Button */}
         <div className="max-w-md mx-auto mt-8">
