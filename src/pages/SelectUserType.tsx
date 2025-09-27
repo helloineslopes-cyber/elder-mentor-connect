@@ -19,11 +19,11 @@ const SelectUserType = () => {
           <ArrowLeft className="w-5 h-5" />
         </Button>
         
-        <ProgressBar currentStep={1} totalSteps={5} className="mb-8" />
+        <ProgressBar currentStep={1} totalSteps={3} className="mb-8" />
 
         {/* Title */}
         <div className="text-center space-y-4 mb-16">
-          <h1 className="text-3xl font-bold text-foreground">Quem és?</h1>
+          <h1 className="text-3xl font-bold text-foreground">Qual é você?</h1>
         </div>
 
         {/* User Type Buttons */}
@@ -35,7 +35,7 @@ const SelectUserType = () => {
 
         {/* Helper text */}
         <div className="text-center mt-8">
-          <p className="text-muted-foreground text-sm">Diz-nos quem és para continuares.</p>
+          <p className="text-muted-foreground text-sm">Diga-nos quem é para continuar.</p>
         </div>
       </div>
     </div>;
