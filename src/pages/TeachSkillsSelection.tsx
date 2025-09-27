@@ -36,13 +36,13 @@ const TeachSkillsSelection = () => {
   };
   return <div className="min-h-screen bg-gradient-to-br from-background to-muted">
       {/* Header */}
-      <div className="pt-8 pb-6 px-0 py-0">
+      <div className="pt-8 pb-8 px-6">
         <div className="max-w-md mx-auto px-6">
           <Button variant="ghost" onClick={handleBack} className="mb-6 -ml-2" size="sm">
             <ArrowLeft className="w-5 h-5" />
           </Button>
           
-          <ProgressBar currentStep={3} totalSteps={4} className="mb-2" />
+          <ProgressBar currentStep={3} totalSteps={4} className="mb-8" />
         </div>
         
         <div className="text-center mb-4">
