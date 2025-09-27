@@ -24,6 +24,7 @@ const ProfileSetup = () => {
     bio: "",
     location: ""
   });
+  const [dateInputValue, setDateInputValue] = useState("");
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
@@ -89,7 +90,7 @@ const ProfileSetup = () => {
               <Input
                 id="birthDate"
                 placeholder="dd/mm/yyyy"
-                value={formData.birthDate ? format(formData.birthDate, "dd/MM/yyyy") : ""}
+                value={dateInputValue}
                 onChange={(e) => {
                   const value = e.target.value;
                   // Auto-format as user types
@@ -101,13 +102,22 @@ const ProfileSetup = () => {
                     formatted = formatted.substring(0, 5) + '/' + formatted.substring(5, 9);
                   }
                   
+                  // Update the input display state
+                  setDateInputValue(formatted);
+                  
                   // Try to parse the date if complete
                   if (formatted.length === 10) {
                     const [day, month, year] = formatted.split('/').map(Number);
                     const date = new Date(year, month - 1, day);
                     
-                    // Validate the date
-                    if (date.getDate() === day && date.getMonth() === month - 1 && date.getFullYear() === year) {
+                    // Validate the date and age
+                    const today = new Date();
+                    const age = today.getFullYear() - year;
+                    const isValidDate = date.getDate() === day && date.getMonth() === month - 1 && date.getFullYear() === year;
+                    const isReasonableAge = age >= 13 && age <= 120;
+                    const isNotFuture = date <= today;
+                    
+                    if (isValidDate && isReasonableAge && isNotFuture) {
                       setFormData(prev => ({ ...prev, birthDate: date }));
                     } else {
                       setFormData(prev => ({ ...prev, birthDate: undefined }));
@@ -115,9 +125,6 @@ const ProfileSetup = () => {
                   } else {
                     setFormData(prev => ({ ...prev, birthDate: undefined }));
                   }
-                  
-                  // Update the input display
-                  e.target.value = formatted;
                 }}
                 maxLength={10}
               />
