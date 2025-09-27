@@ -108,7 +108,7 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                Encontre pessoa com quem conectar e coisas para aprender
+                Encontre pessoas com quem conectar e coisas para aprender
               </p>
               <Button variant="outline" className="w-full">
                 Explorar
