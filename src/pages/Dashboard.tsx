@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { IconContainer } from "@/components/ui/icon";
 import { Home, User, Users, MessageCircle, Search } from "lucide-react";
 
 const Dashboard = () => {
   const [userName, setUserName] = useState("");
+  const [newConnections, setNewConnections] = useState(1); // Exemplo: 1 nova conexão
+  const [newMessages, setNewMessages] = useState(2); // Exemplo: 2 novas mensagens
 
   useEffect(() => {
     const userProfile = localStorage.getItem("userProfile");
@@ -50,9 +53,16 @@ const Dashboard = () => {
 
           <Card className="hover:shadow-lg transition-shadow cursor-pointer">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Users className="w-5 h-5" />
-                Conexões
+              <CardTitle className="flex items-center gap-2 justify-between">
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5" />
+                  Conexões
+                </div>
+                {newConnections > 0 && (
+                  <Badge variant="destructive" className="text-xs">
+                    {newConnections} nova{newConnections > 1 ? 's' : ''}
+                  </Badge>
+                )}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -67,9 +77,16 @@ const Dashboard = () => {
 
           <Card className="hover:shadow-lg transition-shadow cursor-pointer">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <MessageCircle className="w-5 h-5" />
-                Mensagens
+              <CardTitle className="flex items-center gap-2 justify-between">
+                <div className="flex items-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  Mensagens
+                </div>
+                {newMessages > 0 && (
+                  <Badge variant="destructive" className="text-xs">
+                    {newMessages} nova{newMessages > 1 ? 's' : ''}
+                  </Badge>
+                )}
               </CardTitle>
             </CardHeader>
             <CardContent>
