@@ -34,7 +34,6 @@ const LearnSkillsSelection = () => {
       });
       return;
     }
-
     if (learnSkills.length === 0) {
       toast({
         title: "Selecione pelo menos uma área",
@@ -67,7 +66,7 @@ const LearnSkillsSelection = () => {
         </div>
         
         <div className="text-center mb-4">
-          <h1 className="text-3xl font-bold text-foreground mb-2">
+          <h1 className="text-3xl font-bold text-foreground mb-2 mx-0 px-0 py-[12px]">
             O que quer aprender?
           </h1>
           <p className="text-muted-foreground max-w-md mx-auto text-center text-xl">
