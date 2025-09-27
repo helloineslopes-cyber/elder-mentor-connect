@@ -83,7 +83,7 @@ const ProfileSetup = () => {
 
             <div className="space-y-2">
               <Label htmlFor="age">Idade*</Label>
-              <Input id="age" type="number" placeholder="Digite sua idade" value={formData.age} onChange={e => handleInputChange("age", e.target.value)} />
+              <Input id="age" type="number" placeholder="Ex: 67" value={formData.age} onChange={e => handleInputChange("age", e.target.value)} />
             </div>
 
             <div className="space-y-2">
