@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { IconContainer } from "@/components/ui/icon";
-import { Home, User, Users, MessageCircle, Search } from "lucide-react";
+import { Home, User, Users, MessageCircle, Search, LogOut } from "lucide-react";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [newConnections, setNewConnections] = useState(1); // Exemplo: 1 nova conexão
   const [newMessages, setNewMessages] = useState(2); // Exemplo: 2 novas mensagens
@@ -17,6 +19,17 @@ const Dashboard = () => {
       setUserName(profile.name);
     }
   }, []);
+
+  const handleLogout = () => {
+    // Limpar dados do localStorage
+    localStorage.removeItem("userProfile");
+    localStorage.removeItem("selectedUserType");
+    localStorage.removeItem("teachSkills");
+    localStorage.removeItem("learnSkills");
+    
+    // Redirecionar para a página inicial
+    navigate("/");
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted">
@@ -115,6 +128,18 @@ const Dashboard = () => {
               </Button>
             </CardContent>
           </Card>
+        </div>
+        
+        {/* Logout Button */}
+        <div className="max-w-4xl mx-auto mt-8">
+          <Button 
+            variant="outline" 
+            onClick={handleLogout}
+            className="w-full flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground"
+          >
+            <LogOut className="w-4 h-4" />
+            Terminar sessão
+          </Button>
         </div>
       </div>
     </div>
