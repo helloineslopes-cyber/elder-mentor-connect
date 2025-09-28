@@ -5,34 +5,31 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { ArrowLeft, Upload, FileCheck, Shield, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 const IDVerification = () => {
   const navigate = useNavigate();
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-
   const handleBack = () => {
     navigate("/learn-skills-selection");
   };
-
   const handleSkip = () => {
     navigate("/dashboard");
   };
-
   const handleContinue = () => {
     if (uploadedFile) {
       // TODO: Save verification document when Supabase is connected
       console.log("ID document uploaded:", uploadedFile);
       toast({
         title: "Documento carregado",
-        description: "O seu documento foi carregado com sucesso. Será verificado em breve.",
+        description: "O seu documento foi carregado com sucesso. Será verificado em breve."
       });
     }
     navigate("/dashboard");
   };
-
   const handleFileSelect = (file: File) => {
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
     const maxSize = 10 * 1024 * 1024; // 10MB
@@ -45,7 +42,6 @@ const IDVerification = () => {
       });
       return;
     }
-
     if (file.size > maxSize) {
       toast({
         title: "Ficheiro muito grande",
@@ -54,9 +50,8 @@ const IDVerification = () => {
       });
       return;
     }
-
     setUploadedFile(file);
-    
+
     // Create preview for images
     if (file.type.startsWith('image/')) {
       const url = URL.createObjectURL(file);
@@ -64,40 +59,33 @@ const IDVerification = () => {
     } else {
       setPreviewUrl(null);
     }
-
     toast({
       title: "Ficheiro carregado",
-      description: `${file.name} foi carregado com sucesso.`,
+      description: `${file.name} foi carregado com sucesso.`
     });
   };
-
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(true);
   };
-
   const handleDragLeave = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
   };
-
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
-    
     const files = Array.from(e.dataTransfer.files);
     if (files.length > 0) {
       handleFileSelect(files[0]);
     }
   };
-
   const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
       handleFileSelect(files[0]);
     }
   };
-
   const removeFile = () => {
     setUploadedFile(null);
     setPreviewUrl(null);
@@ -105,9 +93,7 @@ const IDVerification = () => {
       URL.revokeObjectURL(previewUrl);
     }
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted flex flex-col">
+  return <div className="min-h-screen bg-gradient-to-br from-background to-muted flex flex-col">
       {/* Header */}
       <div className="pt-8 pb-8 px-6">
         <div className="max-w-md mx-auto">
@@ -119,9 +105,7 @@ const IDVerification = () => {
         </div>
         
         <div className="text-center">
-          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Shield className="w-8 h-8 text-primary" />
-          </div>
+          
           <h1 className="text-3xl font-bold text-foreground mb-2">Verificação de identidade</h1>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">
             Carregue um documento de identificação para verificar a sua conta. Este passo é opcional por agora.
@@ -140,17 +124,7 @@ const IDVerification = () => {
           </CardHeader>
 
           <CardContent className="space-y-6">
-            {!uploadedFile ? (
-              <div
-                className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
-                  isDragging 
-                    ? 'border-primary bg-primary/5' 
-                    : 'border-border hover:border-primary/50'
-                }`}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-              >
+            {!uploadedFile ? <div className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${isDragging ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50'}`} onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
                 <Upload className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                 <p className="text-lg font-medium mb-2">
                   Arraste e solte o ficheiro aqui
@@ -158,13 +132,7 @@ const IDVerification = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   ou clique para selecionar
                 </p>
-                <input
-                  type="file"
-                  accept="image/jpeg,image/png,image/webp,application/pdf"
-                  onChange={handleFileInputChange}
-                  className="hidden"
-                  id="file-upload"
-                />
+                <input type="file" accept="image/jpeg,image/png,image/webp,application/pdf" onChange={handleFileInputChange} className="hidden" id="file-upload" />
                 <Button variant="outline" asChild>
                   <label htmlFor="file-upload" className="cursor-pointer">
                     Selecionar ficheiro
@@ -173,9 +141,7 @@ const IDVerification = () => {
                 <p className="text-xs text-muted-foreground mt-2">
                   JPG, PNG, WEBP ou PDF (máx. 10MB)
                 </p>
-              </div>
-            ) : (
-              <div className="border rounded-lg p-4">
+              </div> : <div className="border rounded-lg p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-3">
                     <FileCheck className="w-6 h-6 text-green-500" />
@@ -191,34 +157,17 @@ const IDVerification = () => {
                   </Button>
                 </div>
                 
-                {previewUrl && (
-                  <div className="mt-3">
-                    <img 
-                      src={previewUrl} 
-                      alt="Preview do documento" 
-                      className="w-full h-32 object-cover rounded border"
-                    />
-                  </div>
-                )}
-              </div>
-            )}
+                {previewUrl && <div className="mt-3">
+                    <img src={previewUrl} alt="Preview do documento" className="w-full h-32 object-cover rounded border" />
+                  </div>}
+              </div>}
 
             <div className="space-y-3">
-              <Button 
-                onClick={handleContinue} 
-                size="full" 
-                disabled={!uploadedFile}
-                className="w-full"
-              >
+              <Button onClick={handleContinue} size="full" disabled={!uploadedFile} className="w-full">
                 Continuar com verificação
               </Button>
               
-              <Button 
-                variant="outline" 
-                onClick={handleSkip} 
-                size="full"
-                className="w-full"
-              >
+              <Button variant="outline" onClick={handleSkip} size="full" className="w-full">
                 Saltar por agora
               </Button>
             </div>
@@ -231,8 +180,6 @@ const IDVerification = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default IDVerification;
