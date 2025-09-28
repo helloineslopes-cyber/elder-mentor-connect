@@ -104,11 +104,11 @@ const Match = () => {
           </div>
 
           {/* Bottom Actions */}
-          <div className="flex justify-between items-center px-4 gap-8">
+          <div className="flex justify-between items-center px-4 gap-4">
             <Button 
               variant="outline"
               onClick={handleEndMatch}
-              className="text-destructive border-destructive hover:bg-destructive hover:text-destructive-foreground font-semibold"
+              className="text-destructive border-destructive hover:bg-destructive hover:text-destructive-foreground font-semibold px-6 py-2 text-sm whitespace-nowrap"
             >
               Terminar Conexão
             </Button>
@@ -116,7 +116,7 @@ const Match = () => {
             <Button 
               variant="outline"
               onClick={handleReportUser}
-              className="border-muted-foreground hover:bg-muted hover:text-foreground font-semibold"
+              className="border-muted-foreground hover:bg-muted hover:text-foreground font-semibold px-6 py-2 text-sm whitespace-nowrap"
             >
               Reportar Utilizador
             </Button>
