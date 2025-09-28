@@ -21,7 +21,7 @@ const Profile = () => {
 
   // Mock data - in a real app this would come from the user ID
   const profileData = {
-    name: "Eleanor",
+    name: "Maria João",
     age: 68,
     occupation: "Retired Teacher",
     joinedYear: "2022",
