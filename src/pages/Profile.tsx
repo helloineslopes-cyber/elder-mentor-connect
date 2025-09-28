@@ -23,10 +23,10 @@ const Profile = () => {
   const profileData = {
     name: "Maria João",
     age: 68,
-    occupation: "Retired Teacher",
+    occupation: "Professora Reformada",
     joinedYear: "2022",
     avatar: "EL",
-    bio: "Eleanor is a retired teacher with a passion for gardening and a love for sharing her knowledge with others.",
+    bio: "Sou uma professora reformada com uma paixão pela jardinagem e um gosto especial por partilhar os meus conhecimentos com os outros.",
     canTeach: [{
       name: "Gardening",
       icon: Sprout
