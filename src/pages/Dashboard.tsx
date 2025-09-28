@@ -82,7 +82,11 @@ const Dashboard = () => {
               <p className="text-muted-foreground mb-4">
                 Veja aqui as suas conexões
               </p>
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => navigate("/connections")}
+              >
                 Ver Conexões
               </Button>
             </CardContent>
