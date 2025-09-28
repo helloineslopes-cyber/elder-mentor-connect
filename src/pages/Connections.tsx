@@ -211,12 +211,12 @@ const Connections = () => {
                               </div>
                               <div className="flex flex-col sm:flex-row gap-2">
                                 <Button 
+                                  variant="outline"
                                   size="sm" 
-                                  onClick={() => handleAcceptRequest(request.id)}
                                   className="w-full sm:w-auto"
                                 >
-                                  <Check className="w-4 h-4 sm:mr-2" />
-                                  Aceitar
+                                  <User className="w-4 h-4 sm:mr-2" />
+                                  Ver Perfil
                                 </Button>
                                 <Button 
                                   variant="outline" 
