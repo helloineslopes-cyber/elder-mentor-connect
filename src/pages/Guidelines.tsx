@@ -12,7 +12,7 @@ const Guidelines = () => {
   };
   const guidelines = [{
     icon: Users,
-    title: "Encontros",
+    title: "Respeito e Cortesia",
     description: "Trate todos os membros com respeito e cortesia. Comunicação respeitosa é essencial."
   }, {
     icon: Shield,
