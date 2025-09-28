@@ -63,7 +63,7 @@ const Guidelines = () => {
             </CardHeader>
             <CardContent className="pt-0">
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Ao continuar, confirma que leu e aceita cumprir todas as diretrizes da comunidade.
+                Utilize as ferramentas de segurança para terminar conexões ou reportar utilizadores se se sentir inseguro.
               </p>
             </CardContent>
           </Card>
