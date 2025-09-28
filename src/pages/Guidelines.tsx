@@ -58,7 +58,7 @@ const Guidelines = () => {
                 <div className="p-2 rounded-lg bg-primary/10">
                   <AlertTriangle className="w-6 h-6 text-primary" />
                 </div>
-                Confirmação
+                Denúncie
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-0">
