@@ -47,9 +47,9 @@ const Profile = () => {
       name: "Tecnologias",
       icon: Monitor
     }],
-    communityRole: "Mentor da Comunidade",
+    communityRole: "Conquistas",
     badges: [{
-      name: "Mentor Badge",
+      name: "Mentor da Comunidade",
       icon: Award
     }]
   };
