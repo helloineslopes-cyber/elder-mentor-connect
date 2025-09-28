@@ -15,7 +15,7 @@ const Connections = () => {
     {
       id: 1,
       name: "Maria Silva",
-      userType: "Ensinar",
+      userType: "Quer ensinar",
       skills: ["Culinária", "Jardinagem"],
       avatar: "MS",
       isOnline: true
@@ -23,7 +23,7 @@ const Connections = () => {
     {
       id: 2,
       name: "João Santos",
-      userType: "Aprender",
+      userType: "Quer aprender",
       skills: ["Tecnologia", "Línguas"],
       avatar: "JS",
       isOnline: false
@@ -31,7 +31,7 @@ const Connections = () => {
     {
       id: 3,
       name: "Ana Costa",
-      userType: "Ambos",
+      userType: "Quer aprender",
       skills: ["Artesanato", "Música"],
       avatar: "AC",
       isOnline: true
