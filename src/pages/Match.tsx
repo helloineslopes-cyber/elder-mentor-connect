@@ -56,7 +56,7 @@ const Match = () => {
           </Button>
           
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-foreground mb-8">Match</h1>
+            <h1 className="text-3xl font-bold text-foreground mb-8">Conexão</h1>
           </div>
         </div>
       </div>
