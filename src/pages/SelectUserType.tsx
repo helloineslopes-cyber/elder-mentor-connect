@@ -30,7 +30,7 @@ const SelectUserType = () => {
 
         {/* User Type Buttons */}
         <div className="space-y-4 mb-8">
-          <Button variant="default" size="full" onClick={() => handleUserTypeSelection("younger")} className="h-16 text-xl font-semibold">Jovem</Button>
+          <Button variant="default" size="full" onClick={() => handleUserTypeSelection("younger")} className="h-16 text-xl font-semibold">Jovem (18 a 35 anos)</Button>
 
           <Button variant="default" size="full" onClick={() => handleUserTypeSelection("older")} className="h-16 text-xl font-semibold">Sénior</Button>
         </div>
