@@ -39,7 +39,7 @@ const Guidelines = () => {
             <IconContainer className="mx-auto mb-4">
               <Shield className="w-8 h-8" />
             </IconContainer>
-            <h1 className="text-3xl font-bold text-foreground mb-2">Diretrizes da Comunidade</h1>
+            <h1 className="text-3xl font-bold text-foreground mb-2">Encontros</h1>
             <p className="text-muted-foreground text-lg">
               Leia atentamente as nossas diretrizes para garantir uma experiência segura e positiva para todos
             </p>
