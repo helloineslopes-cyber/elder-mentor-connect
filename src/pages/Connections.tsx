@@ -166,7 +166,12 @@ const Connections = () => {
                               <MessageCircle className="w-4 h-4 mr-2" />
                               Mensagem
                             </Button>
-                            <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              className="w-full sm:w-auto"
+                              onClick={() => navigate(`/profile/${connection.id}`)}
+                            >
                               <User className="w-4 h-4 mr-2" />
                               Ver Perfil
                             </Button>
@@ -228,6 +233,7 @@ const Connections = () => {
                                   variant="outline"
                                   size="sm" 
                                   className="w-full sm:w-auto"
+                                  onClick={() => navigate(`/profile/${request.id}`)}
                                 >
                                   <User className="w-4 h-4 sm:mr-2" />
                                   Ver Perfil

@@ -13,6 +13,7 @@ import Guidelines from "./pages/Guidelines";
 import Dashboard from "./pages/Dashboard";
 import Connections from "./pages/Connections";
 import Match from "./pages/Match";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/connections" element={<Connections />} />
           <Route path="/match/:connectionId" element={<Match />} />
+          <Route path="/profile/:userId" element={<Profile />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
