@@ -9,6 +9,7 @@ import ProfileSetup from "./pages/ProfileSetup";
 import TeachSkillsSelection from "./pages/TeachSkillsSelection";
 import LearnSkillsSelection from "./pages/LearnSkillsSelection";
 import IDVerification from "./pages/IDVerification";
+import Guidelines from "./pages/Guidelines";
 import Dashboard from "./pages/Dashboard";
 import Connections from "./pages/Connections";
 import Match from "./pages/Match";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/teach-skills-selection" element={<TeachSkillsSelection />} />
           <Route path="/learn-skills-selection" element={<LearnSkillsSelection />} />
           <Route path="/id-verification" element={<IDVerification />} />
+          <Route path="/guidelines" element={<Guidelines />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/connections" element={<Connections />} />
           <Route path="/match/:connectionId" element={<Match />} />

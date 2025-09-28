@@ -17,7 +17,7 @@ const IDVerification = () => {
     navigate("/learn-skills-selection");
   };
   const handleSkip = () => {
-    navigate("/dashboard");
+    navigate("/guidelines");
   };
   const handleContinue = () => {
     if (uploadedFile) {
@@ -28,7 +28,7 @@ const IDVerification = () => {
         description: "O seu documento foi carregado com sucesso. Será verificado em breve."
       });
     }
-    navigate("/dashboard");
+    navigate("/guidelines");
   };
   const handleFileSelect = (file: File) => {
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
