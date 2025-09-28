@@ -53,8 +53,16 @@ const Guidelines = () => {
           </div>
 
           <Card className="hover:shadow-lg transition-shadow mb-8">
-            <CardContent className="pt-6">
-              <p className="text-muted-foreground text-center">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <AlertTriangle className="w-6 h-6 text-primary" />
+                </div>
+                Confirmação
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-0">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Ao continuar, confirma que leu e aceita cumprir todas as diretrizes da comunidade.
               </p>
             </CardContent>
