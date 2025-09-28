@@ -95,7 +95,7 @@ const Connections = () => {
             className="mb-4 flex items-center gap-2"
           >
             <ArrowLeft className="w-4 h-4" />
-            Voltar ao Dashboard
+            Voltar ao Início
           </Button>
           
           <div className="text-center">
