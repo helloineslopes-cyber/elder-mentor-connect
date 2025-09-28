@@ -167,8 +167,8 @@ const Connections = () => {
                               Mensagem
                             </Button>
                             <Button variant="outline" size="sm" className="w-full sm:w-auto">
-                              <User className="w-4 h-4 sm:mr-2" />
-                              <span className="hidden sm:inline">Perfil</span>
+                              <User className="w-4 h-4 mr-2" />
+                              Ver Perfil
                             </Button>
                             <Button variant="outline" size="sm" className="w-full sm:w-auto">
                               <Users className="w-4 h-4 sm:mr-2" />
