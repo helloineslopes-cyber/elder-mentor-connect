@@ -106,17 +106,17 @@ const Match = () => {
           {/* Bottom Actions */}
           <div className="flex justify-between items-center px-4">
             <Button 
-              variant="ghost"
+              variant="outline"
               onClick={handleEndMatch}
-              className="text-destructive hover:text-destructive font-semibold"
+              className="text-destructive border-destructive hover:bg-destructive hover:text-destructive-foreground font-semibold"
             >
               Terminar Conexão
             </Button>
             
             <Button 
-              variant="ghost"
+              variant="outline"
               onClick={handleReportUser}
-              className="text-muted-foreground hover:text-muted-foreground font-semibold"
+              className="border-muted-foreground hover:bg-muted hover:text-foreground font-semibold"
             >
               Reportar Utilizador
             </Button>
