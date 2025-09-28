@@ -114,7 +114,12 @@ const Connections = () => {
           <Tabs defaultValue="connections" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="connections">Conexões</TabsTrigger>
-              <TabsTrigger value="requests">Pedidos</TabsTrigger>
+              <TabsTrigger value="requests" className="relative">
+                Pedidos
+                <span className="ml-2 bg-primary text-primary-foreground text-xs rounded-full px-2 py-0.5 min-w-[20px] h-5 flex items-center justify-center">
+                  2
+                </span>
+              </TabsTrigger>
             </TabsList>
             
             <TabsContent value="connections" className="mt-6">
