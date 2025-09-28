@@ -170,7 +170,12 @@ const Connections = () => {
                               <User className="w-4 h-4 mr-2" />
                               Ver Perfil
                             </Button>
-                            <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              className="w-full sm:w-auto"
+                              onClick={() => navigate(`/match/${connection.id}`)}
+                            >
                               <Users className="w-4 h-4 mr-2" />
                               Ver Conexão
                             </Button>

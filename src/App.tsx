@@ -11,6 +11,7 @@ import LearnSkillsSelection from "./pages/LearnSkillsSelection";
 import IDVerification from "./pages/IDVerification";
 import Dashboard from "./pages/Dashboard";
 import Connections from "./pages/Connections";
+import Match from "./pages/Match";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/id-verification" element={<IDVerification />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/connections" element={<Connections />} />
+          <Route path="/match/:connectionId" element={<Match />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
