@@ -130,9 +130,9 @@ const Connections = () => {
                 ) : (
                   connections.map((connection) => (
                     <Card key={connection.id} className="hover:shadow-lg transition-shadow">
-                      <CardContent className="pt-6">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4">
+                       <CardContent className="pt-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                          <div className="flex items-center gap-4 flex-1">
                             <div className="relative">
                               <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                                 {connection.avatar}
@@ -141,28 +141,29 @@ const Connections = () => {
                                 <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-background rounded-full"></div>
                               )}
                             </div>
-                            <div className="flex-1">
-                              <h3 className="font-semibold text-lg">{connection.name}</h3>
+                            <div className="flex-1 min-w-0">
+                              <h3 className="font-semibold text-lg truncate">{connection.name}</h3>
                               <Badge variant="secondary" className="mb-2">
                                 {connection.userType}
                               </Badge>
-                              <p className="text-sm text-muted-foreground">
+                              <p className="text-sm text-muted-foreground break-words">
                                 {connection.skills.join(", ")}
                               </p>
                             </div>
                           </div>
-                          <div className="flex gap-2">
+                          <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                             <Button 
                               variant="outline" 
                               size="sm"
                               onClick={() => handleMessageUser(connection.id)}
+                              className="w-full sm:w-auto"
                             >
-                              <MessageCircle className="w-4 h-4 mr-2" />
-                              Mensagem
+                              <MessageCircle className="w-4 h-4 sm:mr-2" />
+                              <span className="hidden sm:inline">Mensagem</span>
                             </Button>
-                            <Button variant="outline" size="sm">
-                              <User className="w-4 h-4 mr-2" />
-                              Ver Perfil
+                            <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                              <User className="w-4 h-4 sm:mr-2" />
+                              <span className="hidden sm:inline">Ver Perfil</span>
                             </Button>
                           </div>
                         </div>
@@ -188,40 +189,42 @@ const Connections = () => {
                       </Card>
                     ) : (
                       incomingRequests.map((request) => (
-                        <Card key={request.id} className="hover:shadow-lg transition-shadow">
+                         <Card key={request.id} className="hover:shadow-lg transition-shadow">
                           <CardContent className="pt-6">
-                            <div className="flex items-start justify-between">
-                              <div className="flex items-start gap-4 flex-1">
+                            <div className="flex flex-col gap-4">
+                              <div className="flex items-start gap-4">
                                 <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                                   {request.avatar}
                                 </div>
-                                <div className="flex-1">
+                                <div className="flex-1 min-w-0">
                                   <h4 className="font-semibold">{request.name}</h4>
                                   <Badge variant="secondary" className="mb-2">
                                     {request.userType}
                                   </Badge>
-                                  <p className="text-sm text-muted-foreground mb-2">
+                                  <p className="text-sm text-muted-foreground mb-2 break-words">
                                     {request.skills.join(", ")}
                                   </p>
-                                  <p className="text-sm bg-muted p-3 rounded-lg">
+                                  <p className="text-sm bg-muted p-3 rounded-lg break-words">
                                     "{request.message}"
                                   </p>
                                 </div>
                               </div>
-                              <div className="flex gap-2 ml-4">
+                              <div className="flex flex-col sm:flex-row gap-2">
                                 <Button 
                                   size="sm" 
                                   onClick={() => handleAcceptRequest(request.id)}
+                                  className="w-full sm:w-auto"
                                 >
-                                  <Check className="w-4 h-4 mr-2" />
+                                  <Check className="w-4 h-4 sm:mr-2" />
                                   Aceitar
                                 </Button>
                                 <Button 
                                   variant="outline" 
                                   size="sm"
                                   onClick={() => handleDeclineRequest(request.id)}
+                                  className="w-full sm:w-auto"
                                 >
-                                  <X className="w-4 h-4 mr-2" />
+                                  <X className="w-4 h-4 sm:mr-2" />
                                   Recusar
                                 </Button>
                               </div>
