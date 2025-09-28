@@ -104,7 +104,7 @@ const Match = () => {
           </div>
 
           {/* Bottom Actions */}
-          <div className="flex justify-between items-center px-4">
+          <div className="flex justify-between items-center px-4 gap-8">
             <Button 
               variant="outline"
               onClick={handleEndMatch}
