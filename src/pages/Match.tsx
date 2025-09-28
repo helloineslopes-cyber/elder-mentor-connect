@@ -116,7 +116,7 @@ const Match = () => {
             <Button 
               variant="outline"
               onClick={handleReportUser}
-              className="text-black border-muted-foreground hover:bg-muted hover:text-foreground font-semibold px-6 py-2 text-sm whitespace-nowrap"
+              className="text-black border-black hover:bg-muted hover:text-foreground font-semibold px-6 py-2 text-sm whitespace-nowrap"
             >
               Reportar Utilizador
             </Button>
