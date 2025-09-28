@@ -78,11 +78,12 @@ const Match = () => {
           {/* Action Buttons */}
           <div className="space-y-4 mb-12">
             <Button 
-              onClick={handleScheduleMeeting}
+              variant="secondary"
+              onClick={handleStartChat}
               className="w-full py-6 text-lg font-semibold rounded-2xl"
             >
-              <Calendar className="w-6 h-6 mr-3" />
-              Agendar Reunião
+              <MessageCircle className="w-6 h-6 mr-3" />
+              Iniciar Conversa
             </Button>
             
             <Button 
@@ -94,12 +95,11 @@ const Match = () => {
             </Button>
             
             <Button 
-              variant="secondary"
-              onClick={handleStartChat}
+              onClick={handleScheduleMeeting}
               className="w-full py-6 text-lg font-semibold rounded-2xl"
             >
-              <MessageCircle className="w-6 h-6 mr-3" />
-              Iniciar Conversa
+              <Calendar className="w-6 h-6 mr-3" />
+              Agendar Reunião
             </Button>
           </div>
 
