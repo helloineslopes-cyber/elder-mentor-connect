@@ -28,26 +28,26 @@ const Profile = () => {
     avatar: "EL",
     bio: "Sou uma professora reformada com uma paixão pela jardinagem e um gosto especial por partilhar os meus conhecimentos com os outros.",
     canTeach: [{
-      name: "Gardening",
+      name: "Jardinagem",
       icon: Sprout
     }, {
-      name: "Literature",
+      name: "Literatura",
       icon: BookOpen
     }, {
-      name: "Photography",
+      name: "Fotografia",
       icon: Camera
     }],
     wantsToLearn: [{
-      name: "Music Theory",
+      name: "Música",
       icon: Music
     }, {
-      name: "Culinary Arts",
+      name: "Culinária",
       icon: ChefHat
     }, {
-      name: "Digital Skills",
+      name: "Tecnologias",
       icon: Monitor
     }],
-    communityRole: "Community Mentor",
+    communityRole: "Mentor da Comunidade",
     badges: [{
       name: "Mentor Badge",
       icon: Award
