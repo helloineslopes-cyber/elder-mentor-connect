@@ -63,7 +63,7 @@ const Guidelines = () => {
           <div className="text-center">
             <Button onClick={handleContinue} className="px-8 py-3 text-lg font-semibold w-full sm:w-auto">
               <CheckCircle className="w-5 h-5 mr-2" />
-              Aceito e Continuar
+              Continuar
             </Button>
           </div>
         </div>
