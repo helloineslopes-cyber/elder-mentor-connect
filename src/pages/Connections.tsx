@@ -171,8 +171,8 @@ const Connections = () => {
                               Ver Perfil
                             </Button>
                             <Button variant="outline" size="sm" className="w-full sm:w-auto">
-                              <Users className="w-4 h-4 sm:mr-2" />
-                              <span className="hidden sm:inline">Ver Conexão</span>
+                              <Users className="w-4 h-4 mr-2" />
+                              Ver Conexão
                             </Button>
                           </div>
                         </div>
