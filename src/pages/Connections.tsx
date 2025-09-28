@@ -163,8 +163,8 @@ const Connections = () => {
                               onClick={() => handleMessageUser(connection.id)}
                               className="w-full sm:w-auto"
                             >
-                              <MessageCircle className="w-4 h-4 sm:mr-2" />
-                              <span className="hidden sm:inline">Mensagem</span>
+                              <MessageCircle className="w-4 h-4 mr-2" />
+                              Mensagem
                             </Button>
                             <Button variant="outline" size="sm" className="w-full sm:w-auto">
                               <User className="w-4 h-4 sm:mr-2" />
