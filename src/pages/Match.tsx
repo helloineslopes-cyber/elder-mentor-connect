@@ -78,7 +78,6 @@ const Match = () => {
           {/* Action Buttons */}
           <div className="space-y-4 mb-12">
             <Button 
-              variant="secondary"
               onClick={handleStartChat}
               className="w-full py-6 text-lg font-semibold rounded-2xl"
             >
@@ -95,6 +94,7 @@ const Match = () => {
             </Button>
             
             <Button 
+              variant="secondary"
               onClick={handleScheduleMeeting}
               className="w-full py-6 text-lg font-semibold rounded-2xl"
             >
