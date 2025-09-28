@@ -121,8 +121,8 @@ const Profile = () => {
               return <Card key={index} className="hover:shadow-md transition-shadow">
                     <CardContent className="py-4">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
-                          <IconComponent className="w-6 h-6 text-secondary" />
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                          <IconComponent className="w-6 h-6 text-primary" />
                         </div>
                         <span className="text-lg font-medium">{skill.name}</span>
                       </div>
@@ -141,8 +141,8 @@ const Profile = () => {
               return <Card key={index} className="hover:shadow-md transition-shadow">
                     <CardContent className="py-4">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                          <IconComponent className="w-6 h-6 text-accent" />
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                          <IconComponent className="w-6 h-6 text-primary" />
                         </div>
                         <span className="text-lg font-medium">{badge.name}</span>
                       </div>
