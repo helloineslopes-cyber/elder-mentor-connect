@@ -21,7 +21,7 @@ const Guidelines = () => {
   }, {
     icon: CheckCircle,
     title: "Encontros",
-    description: "Honre os seus compromissos agendados. Se não puder comparecer, avise com antecedência."
+    description: "Honre os seus compromissos agendados. Se não puder comparecer, avise com antecedência. Informe os seus amigos ou familiares sobre os seus planos."
   }];
   return <div className="min-h-screen bg-gradient-to-br from-background to-muted">
       <div className="pt-8 pb-6 px-6">
