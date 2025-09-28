@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,7 +6,18 @@ import { ArrowLeft, Sprout, BookOpen, Camera, Music, ChefHat, Monitor, Award } f
 
 const Profile = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { userId } = useParams();
+
+  const handleBack = () => {
+    if (location.state?.from) {
+      navigate(location.state.from);
+    } else if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/connections");
+    }
+  };
 
   // Mock data - in a real app this would come from the user ID
   const profileData = {
@@ -39,7 +50,7 @@ const Profile = () => {
         <div className="max-w-2xl mx-auto">
           <Button 
             variant="ghost" 
-            onClick={() => navigate(-1)}
+            onClick={handleBack}
             className="mb-4 flex items-center gap-2"
           >
             <ArrowLeft className="w-4 h-4" />
