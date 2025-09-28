@@ -52,9 +52,9 @@ const Guidelines = () => {
               </Card>)}
           </div>
 
-          <Card className="border-2 border-primary/20 bg-primary/5 mb-8">
+          <Card className="hover:shadow-lg transition-shadow mb-8">
             <CardContent className="pt-6">
-              <p className="text-foreground text-center font-semibold">
+              <p className="text-muted-foreground text-center">
                 Ao continuar, confirma que leu e aceita cumprir todas as diretrizes da comunidade.
               </p>
             </CardContent>
