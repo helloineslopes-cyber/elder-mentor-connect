@@ -2,7 +2,7 @@ import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Sprout, BookOpen, Camera, Music, ChefHat, Monitor, Award } from "lucide-react";
+import { ArrowLeft, Sprout, BookOpen, Camera, Music, ChefHat, Monitor, Award, ShieldCheck } from "lucide-react";
 const Profile = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,6 +24,7 @@ const Profile = () => {
     occupation: "Professora Reformada",
     joinedYear: "2022",
     avatar: "EL",
+    isVerified: true,
     bio: "Sou uma professora reformada com uma paixão pela jardinagem e um gosto especial por partilhar os meus conhecimentos com os outros.",
     canTeach: [{
       name: "Jardinagem",
@@ -76,7 +77,15 @@ const Profile = () => {
             </div>
             
             {/* Profile Info */}
-            <h2 className="text-4xl font-bold text-foreground mb-2">{profileData.name}</h2>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <h2 className="text-4xl font-bold text-foreground">{profileData.name}</h2>
+              {profileData.isVerified && (
+                <Badge variant="secondary" className="flex items-center gap-1 bg-blue-100 text-blue-800 hover:bg-blue-100">
+                  <ShieldCheck className="w-4 h-4" />
+                  Conta Verificada
+                </Badge>
+              )}
+            </div>
             <p className="text-xl text-muted-foreground mb-2">
               {profileData.age}, {profileData.occupation}
             </p>
