@@ -61,7 +61,13 @@ const Profile = () => {
           </Button>
           
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-foreground mb-8">Perfil</h1>
+            <h1 className="text-3xl font-bold text-foreground mb-4">Perfil</h1>
+            {profileData.isVerified && (
+              <Badge variant="secondary" className="flex items-center gap-1 bg-blue-100 text-blue-800 hover:bg-blue-100 mx-auto w-fit mb-6">
+                <ShieldCheck className="w-4 h-4" />
+                Conta Verificada
+              </Badge>
+            )}
           </div>
         </div>
       </div>
@@ -77,15 +83,7 @@ const Profile = () => {
             </div>
             
             {/* Profile Info */}
-            <div className="flex items-center justify-center gap-3 mb-2">
-              <h2 className="text-4xl font-bold text-foreground">{profileData.name}</h2>
-              {profileData.isVerified && (
-                <Badge variant="secondary" className="flex items-center gap-1 bg-blue-100 text-blue-800 hover:bg-blue-100">
-                  <ShieldCheck className="w-4 h-4" />
-                  Conta Verificada
-                </Badge>
-              )}
-            </div>
+            <h2 className="text-4xl font-bold text-foreground mb-2">{profileData.name}</h2>
             <p className="text-xl text-muted-foreground mb-2">
               {profileData.age}, {profileData.occupation}
             </p>
