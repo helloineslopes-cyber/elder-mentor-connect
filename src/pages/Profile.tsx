@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,90 +17,41 @@ const Profile = () => {
     }
   };
 
-  // Load user data from localStorage
-  const [profileData, setProfileData] = useState({
-    name: "",
-    age: 0,
-    occupation: "",
-    joinedYear: "2024",
-    avatar: "",
+  // Mock data - in a real app this would come from the user ID
+  const profileData = {
+    name: "Maria João",
+    age: 68,
+    occupation: "Professora Reformada",
+    joinedYear: "2022",
+    avatar: "EL",
     isVerified: true,
-    bio: "",
-    canTeach: [],
-    wantsToLearn: [],
+    bio: "Sou uma professora reformada com uma paixão pela jardinagem e um gosto especial por partilhar os meus conhecimentos com os outros.",
+    canTeach: [{
+      name: "Jardinagem",
+      icon: Sprout
+    }, {
+      name: "Literatura",
+      icon: BookOpen
+    }, {
+      name: "Fotografia",
+      icon: Camera
+    }],
+    wantsToLearn: [{
+      name: "Música",
+      icon: Music
+    }, {
+      name: "Culinária",
+      icon: ChefHat
+    }, {
+      name: "Tecnologias",
+      icon: Monitor
+    }],
     communityRole: "Conquistas",
     badges: [{
       name: "Mentor da Comunidade",
       icon: Award
     }]
-  });
-
-  useEffect(() => {
-    // Load user profile data
-    const userProfile = localStorage.getItem("userProfile");
-    const teachSkills = localStorage.getItem("teachSkills");
-    const learnSkills = localStorage.getItem("learnSkills");
-
-    if (userProfile) {
-      const profile = JSON.parse(userProfile);
-      
-      // Calculate age from birth date
-      const calculateAge = (birthDate) => {
-        if (!birthDate) return 0;
-        const birth = new Date(birthDate);
-        const today = new Date();
-        let age = today.getFullYear() - birth.getFullYear();
-        const monthDiff = today.getMonth() - birth.getMonth();
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-          age--;
-        }
-        return age;
-      };
-
-      // Create avatar initials
-      const createAvatar = (name) => {
-        if (!name) return "U";
-        const names = name.split(" ");
-        if (names.length >= 2) {
-          return (names[0][0] + names[names.length - 1][0]).toUpperCase();
-        }
-        return name[0]?.toUpperCase() || "U";
-      };
-
-      // Map skills to icon format
-      const mapSkillsToIcons = (skills) => {
-        const skillIconMap = {
-          "Jardinagem": Sprout,
-          "Literatura": BookOpen,
-          "Fotografia": Camera,
-          "Música": Music,
-          "Culinária": ChefHat,
-          "Tecnologias": Monitor,
-          "Informática": Monitor,
-          "Cozinha": ChefHat,
-          "Arte": Camera,
-          "Desporto": Award,
-          "Línguas": BookOpen
-        };
-
-        return skills?.map(skill => ({
-          name: skill,
-          icon: skillIconMap[skill] || BookOpen
-        })) || [];
-      };
-
-      setProfileData({
-        ...profileData,
-        name: profile.name || "",
-        age: calculateAge(profile.birthDate),
-        occupation: profile.location || "Utilizador",
-        bio: profile.bio || "Bem-vindo à nossa comunidade!",
-        avatar: createAvatar(profile.name),
-        canTeach: mapSkillsToIcons(teachSkills ? JSON.parse(teachSkills) : []),
-        wantsToLearn: mapSkillsToIcons(learnSkills ? JSON.parse(learnSkills) : [])
-      });
-    }
-  }, []);
+  };
   return <div className="min-h-screen bg-gradient-to-br from-background to-muted">
       {/* Header */}
       <div className="pt-8 pb-6 px-6">

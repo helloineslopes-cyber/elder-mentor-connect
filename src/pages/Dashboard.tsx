@@ -58,11 +58,7 @@ const Dashboard = () => {
               <p className="text-muted-foreground mb-4">
                 Edite suas informações pessoais e preferências
               </p>
-              <Button 
-                variant="outline" 
-                className="w-full"
-                onClick={() => navigate("/profile")}
-              >
+              <Button variant="outline" className="w-full">
                 Ver Perfil
               </Button>
             </CardContent>
