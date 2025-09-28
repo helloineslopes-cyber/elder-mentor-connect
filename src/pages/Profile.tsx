@@ -12,10 +12,8 @@ const Profile = () => {
   const handleBack = () => {
     if (location.state?.from) {
       navigate(location.state.from);
-    } else if (window.history.length > 1) {
-      navigate(-1);
     } else {
-      navigate("/connections");
+      navigate(-1);
     }
   };
 
