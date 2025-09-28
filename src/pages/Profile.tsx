@@ -83,7 +83,7 @@ const Profile = () => {
               {profileData.age}, {profileData.occupation}
             </p>
             <p className="text-lg text-muted-foreground mb-6">
-              Joined {profileData.joinedYear}
+              Juntou-se em {profileData.joinedYear}
             </p>
             
             {/* Bio */}
