@@ -20,7 +20,7 @@ const Guidelines = () => {
     description: "Nunca partilhe informações pessoais sensíveis como morada completa ou dados bancários."
   }, {
     icon: CheckCircle,
-    title: "Compromissos",
+    title: "Encontros",
     description: "Honre os seus compromissos agendados. Se não puder comparecer, avise com antecedência."
   }];
   return <div className="min-h-screen bg-gradient-to-br from-background to-muted">
